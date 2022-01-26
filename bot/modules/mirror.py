@@ -196,7 +196,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"<b> {uname} your download has been stopped.</b>\n\n🪧 <b>Reason:</b>\n👉 <code>{error}</code>"
+        msg = f"<b> Hey {uname} Your Download Has Been Stopped.</b>\n\n🪧 <b>Reason:</b>\n👉 <code>{error}</code>"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -216,15 +216,15 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             count = len(files)
-            msg = f'<b>☞📂 Filename : </b><code>{link}</code>\n\n'
-            msg += f'<b>📑 Total Files: </b>{count}'
+            msg = f'<b>☞ 📂 Filename :</b> <code>{link}</code>\n\n'
+            msg += f'<b>☞ 📑 Total Files :</b> {count}'
             if typ != 0:
                 msg += f'\n<b>Corrupted Files: </b>{typ}'
             if self.message.chat.type == 'private':
                 sendMessage(msg, self.bot, self.update)
             else:
                 chat_id = str(self.message.chat.id)[4:]
-                msg += f'\n<b>👤 Uploaded By: </b>{uname}\n\n'
+                msg += f'\n<b>👤 Uploaded By :</b> {uname}\n\n'
                 fmsg = ''
                 for index, item in enumerate(list(files), start=1):
                     msg_id = files[item]
@@ -254,8 +254,8 @@ class MirrorListener(listeners.MirrorListeners):
                 return
 
         with download_dict_lock:
-            msg = f'<b>☞📂 Filename: </b><code>{download_dict[self.uid].name()}</code>\n\n<b>☞⭐️ Total Size: </b>{size}'
-            msg += f'\n\n<b>☞⚔️ Type: </b>{typ}'
+            msg = f'<b>☞ 📂 Filename :</b> <code>{download_dict[self.uid].name()}</code>\n\n<b>☞ ⭐️ Total Size :</b> {size}'
+            msg += f'\n\n<b>☞ ⚔️ Type :</b> {typ}'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
                 msg += f'\n<b>✉️ SubFolders: </b>{folders}'
                 msg += f'\n<b>📋 Files: </b>{files}'
@@ -288,7 +288,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>👤 Uploaded By: </b>👉 {uname}\n\n🚫 Dᴏ Nᴏᴛ Sʜᴀʀᴇ Iɴᴅᴇx Lɪɴᴋs Aɴʏᴡʜᴇʀᴇ❌ \n\n⚜️Pʀᴇsᴇɴᴛᴇᴅ Bʏ: <b>@subhasishcloudmirror</b>'
+                msg += f'\n\n<b>👤 Uploaded By :</b> 👉 {uname}\n\n🚫 <b>Dᴏ Nᴏᴛ Sʜᴀʀᴇ Iɴᴅᴇx Lɪɴᴋs Aɴʏᴡʜᴇʀᴇ❌</b> \n\n⚜️ <b>Pʀᴇsᴇɴᴛᴇᴅ Bʏ : @subhasishcloudmirror</b>'
 
         sendMarkup(msg, self.bot, self.update, InlineKeyboardMarkup(buttons.build_menu(2)))
         if self.isQbit and QB_SEED:
