@@ -43,9 +43,9 @@ def stats(update, context):
     mem_t = get_readable_file_size(memory.total)
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
-    stats = f'<b>╭──「⭕️ BOT STATISTICS ⭕️」</b>\n' \
+    stats = f'<b>╭──《🌐 Bᴏᴛ Sᴛᴀᴛɪsᴛɪᴄs 🌐》</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
+            f'<b>├  ⏰ Running Since : {currentTime}</b>\n' \
             f'<b>├  💾 Total Disk Space : {total}</b>\n' \
             f'<b>├  📀 Total Used Space : {used}</b>\n' \
             f'<b>├  💿 Total Free Space : {free}</b>\n' \
@@ -60,7 +60,7 @@ def stats(update, context):
             f'<b>├  ⛱ Memory Free : {mem_a}</b>\n' \
             f'<b>├  ⚖ Memory Used : {mem_u}</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──「 🚸 @Subhasish_bot 🚸 」</b>'
+            f'<b>╰──《 ☣️ @Subhasish_bot ☣️ 》</b>'
     sendMessage(stats, context.bot, update)
 
 
