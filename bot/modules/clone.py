@@ -41,7 +41,7 @@ def cloneNode(update, context):
             LOGGER.info('Checking File/Folder if already in Drive...')
             smsg, button = gd.drive_list(name, True, True)
             if smsg:
-                msg3 = "<b>File/Folder is already available in Drive.\nHere are the search results:</b>"
+                msg3 = "<b>👇🏻 File/Folder Is Already Available In Drive.\nHere Are The Search Results. 👇🏻</b>"
                 sendMarkup(msg3, context.bot, update, button)
                 if gdtot_link:
                     gd.deletefile(link)
@@ -90,7 +90,7 @@ def cloneNode(update, context):
         if gdtot_link:
             gd.deletefile(link)
     else:
-        sendMessage('<b>Send Gdrive or gdtot link along with command or by replying to the link by command</b>', context.bot, update)
+        sendMessage('<b>Send G-Drive Or GDTOT Link Along With Command Or By Replying To The Link By Command.</b>', context.bot, update)
 
 clone_handler = CommandHandler(BotCommands.CloneCommand, cloneNode, filters=CustomFilters.authorized_chat | CustomFilters.authorized_user)
 dispatcher.add_handler(clone_handler)
