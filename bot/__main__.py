@@ -53,12 +53,12 @@ def stats(update, context):
             f'<b>├  🔽 Total Download : {recv}</b>\n' \
             f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
             f'<b>├  💽 DISK : {disk}%</b>\n' \
-            f'<b>├  🔳 Physical Cores : </b> {p_core}\n' \
-            f'<b>├  🔶 Total Cores : </b> {t_core}\n\n' \
-            f'<b>├  ☘ SWAP : </b> {swap_t} |⚡ <b>Used : </b> {swap_p}%\n' \
-            f'<b>├  ☢ Memory Total : </b> {mem_t}\n' \
-            f'<b>├  ⛱ Memory Free : </b> {mem_a}\n' \
-            f'<b>├  ⚖ Memory Used : </b> {mem_u}\n' \
+            f'<b>├  🔳 Physical Cores : {p_core}</b>\n' \
+            f'<b>├  🔶 Total Cores : {t_core}</b>\n' \
+            f'<b>├  ☘ SWAP : {swap_t} |⚡ Used : {swap_p}%</b>\n' \
+            f'<b>├  ☢ Memory Total : {mem_t}</b>\n' \
+            f'<b>├  ⛱ Memory Free : {mem_a}</b>\n' \
+            f'<b>├  ⚖ Memory Used : {mem_u}</b>\n' \
             f'<b>│</b>\n' \
             f'<b>╰──「 🚸 @Subhasish_bot 🚸 」</b>'
     sendMessage(stats, context.bot, update)
@@ -66,14 +66,14 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("My Master", "https://t.me/idsubhasish")
+    buttons.buildbutton("🤵🏻‍♂️ My Master 🗣", "https://t.me/idsubhasish")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 
-<b>Hey! I'm Alive.. 🙂</b>
+<b><i>Hey! I'm Alive.. 🙂</b></i>
 
-I Can Mirror & Leech All Your Links Along With Google Drive Links with multiple features support! 🙃
+<b>I Can Mirror & Leech All Your Links Along With Google Drive Links With Multiple Features Support!</b> 🙃
 
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
