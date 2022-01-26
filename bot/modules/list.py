@@ -15,11 +15,11 @@ def list_buttons(update, context):
     try:
         key = update.message.text.split(" ", maxsplit=1)[1]
     except IndexError:
-        return sendMessage('<b> Opps</b> 🤦 \n\n<b>How to search? </b>\n\n<b>🔎 Example:</b> <code>/list Money Heist</code>', context.bot, update)
+        return sendMessage('<b> Opps</b> 🤦 \n\n<b>How To Search?</b> \n\n<b>🔎 Example :</b> <code>/list Money Heist</code> \n\n📮<b> After Click <i>Team Drive</i> Button! Then Click <i>Both</i> Button</b>', context.bot, update)
     buttons = button_build.ButtonMaker()
-    buttons.sbutton("Drive Root", f"types {user_id} root")
-    buttons.sbutton("Recursive", f"types {user_id} recu")
-    buttons.sbutton("Cancel", f"types {user_id} cancel")
+    buttons.sbutton("📗 Root", f"types {user_id} root")
+    buttons.sbutton("Team Drive 🗂️", f"types {user_id} recu")
+    buttons.sbutton("Cancel ❌", f"types {user_id} cancel")
     button = InlineKeyboardMarkup(buttons.build_menu(2))
     sendMarkup('Choose option to list.', context.bot, update, button)
 
@@ -31,14 +31,14 @@ def select_type(update, context):
     data = query.data
     data = data.split(" ")
     if user_id != int(data[1]):
-        query.answer(text="Not Yours!", show_alert=True)
+        query.answer(text="Not Yours! 😑", show_alert=True)
     elif data[2] in ["root", "recu"]:
         query.answer()
         buttons = button_build.ButtonMaker()
-        buttons.sbutton("Folders", f"types {user_id} folders {data[2]}")
-        buttons.sbutton("Files", f"types {user_id} files {data[2]}")
-        buttons.sbutton("Both", f"types {user_id} both {data[2]}")
-        buttons.sbutton("Cancel", f"types {user_id} cancel")
+        buttons.sbutton("Folders 🗃️", f"types {user_id} folders {data[2]}")
+        buttons.sbutton("📗 Files", f"types {user_id} files {data[2]}")
+        buttons.sbutton("Both ➕", f"types {user_id} both {data[2]}")
+        buttons.sbutton("Cancel ❌", f"types {user_id} cancel")
         button = InlineKeyboardMarkup(buttons.build_menu(2))
         editMessage('Choose option to list.', msg, button)
     elif data[2] in ["files", "folders", "both"]:
