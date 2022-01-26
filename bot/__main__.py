@@ -71,7 +71,7 @@ def start(update, context):
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 
-<b><i>Hey! I'm Alive.. 🙂</b></i>
+<b><i>Hey, I'm Awake Already..! Haven't Slept Since :</b></i> <code>{uptime}</code> 🙂
 
 <b>I Can Mirror & Leech All Your Links Along With Google Drive Links With Multiple Features Support!</b> 🙃
 
@@ -84,7 +84,7 @@ def donate(update, context):
     reply = sendMessage("testing....", context.bot, update)
 
 def restart(update, context):
-    restart_message = sendMessage("Restarting...", context.bot, update)
+    restart_message = sendMessage("Restarting, Please Wait...❗️", context.bot, update)
     if Interval:
         Interval[0].cancel()
     alive.kill()
@@ -104,7 +104,7 @@ def restart(update, context):
 
 def ping(update, context):
     start_time = int(round(time.time() * 1000))
-    reply = sendMessage("Starting Ping", context.bot, update)
+    reply = sendMessage("📶 Starting Ping", context.bot, update)
     end_time = int(round(time.time() * 1000))
     editMessage(f'{end_time - start_time} ms', reply)
 
@@ -249,7 +249,7 @@ def main():
     if os.path.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        bot.edit_message_text("Restarted successfully!", chat_id, msg_id)
+        bot.edit_message_text("✅ Restarted Successfully!", chat_id, msg_id)
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
