@@ -552,7 +552,7 @@ class GoogleDriveHelper:
                     nxt_page += 1
             telegraph.edit_page(
                 path = self.path[prev_page],
-                title = 'Sᴜʙʜᴀsɪsʜ-Cʟᴏᴜᴅ-Mɪʀʀᴏʀ-&-Lᴇᴇᴄʜ Drive Search',
+                title = 'Sᴜʙʜᴀsɪsʜ Cʟᴏᴜᴅ Mɪʀʀᴏʀ & Lᴇᴇᴄʜ Drive Search',
                 author_name='💓 Subhasish Cloud Mirror & Leech MirrorBot 📺',
                 content=content
             )
@@ -740,7 +740,7 @@ class GoogleDriveHelper:
         for content in self.telegraph_content:
             self.path.append(
                 telegraph.create_page(
-                    title='Sᴜʙʜᴀsɪsʜ-Cʟᴏᴜᴅ-Mɪʀʀᴏʀ-&-Lᴇᴇᴄʜ Drive Search',
+                    title='Sᴜʙʜᴀsɪsʜ Cʟᴏᴜᴅ Mɪʀʀᴏʀ & Lᴇᴇᴄʜ Drive Search',
                     content=content
                 )["path"]
             )
