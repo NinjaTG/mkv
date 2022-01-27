@@ -740,7 +740,7 @@ class GoogleDriveHelper:
         for content in self.telegraph_content:
             self.path.append(
                 telegraph.create_page(
-                    title='Sᴜʙʜᴀsɪsʜ Cʟᴏᴜᴅ Mɪʀʀᴏʀ & Lᴇᴇᴄʜ'S Drive Search',
+                    title='Sᴜʙʜᴀsɪsʜ-Cʟᴏᴜᴅ-Mɪʀʀᴏʀ-&-Lᴇᴇᴄʜ Drive Search',
                     content=content
                 )["path"]
             )
