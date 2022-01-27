@@ -71,7 +71,7 @@ def start(update, context):
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
 
-<b><i>Hey, I'm Awake Already..! Haven't Slept Since :</b></i> <code>{currentTime}</code> 🙂
+<b>Hey! I'm Alive..</b> 🙂
 
 <b>I Can Mirror & Leech All Your Links Along With Google Drive Links With Multiple Features Support!</b> 🙃
 
