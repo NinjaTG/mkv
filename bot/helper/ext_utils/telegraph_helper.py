@@ -57,4 +57,4 @@ class TelegraphHelper:
 			return self.edit_page(path, title, content)
 
 
-telegraph=TelegraphHelper('SUBHASISH CLOUD MIRROR', 'https://github.com/idsubhasish/MirrorSubhasish')
+telegraph=TelegraphHelper('Sᴜʙʜᴀsɪsʜ Cʟᴏᴜᴅ Mɪʀʀᴏʀ & Lᴇᴇᴄʜ 📺', 'https://github.com/idsubhasish/SUBHASISH-CLOUD-MIRROR')
